@@ -37,7 +37,7 @@ func change_state(new_state):
 			$Sprite2D.modulate.a = 0.5
 			$InvulnerabilityTimer.start()
 		DEAD:
-			$CollisionShape2D.set_deferred("disabled", false)
+			$CollisionShape2D.set_deferred("disabled", true)
 			$Sprite2D.hide()
 			linear_velocity = Vector2.ZERO
 			dead.emit()

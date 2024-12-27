@@ -24,8 +24,6 @@ func game_over():
 	await $Timer.timeout
 	start_button.show()
 
-
-
 func _on_start_button_pressed() -> void:
 	start_button.hide()
 	start_game.emit()
