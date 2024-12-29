@@ -9,7 +9,7 @@
 
 [sub_resource type="Curve2D" id="Curve2D_u0kre"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1920, 0, 0, 0, 0, 0, 1920, 1080, 0, 0, 0, 0, 0, 1080, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1152, 8, 0, 0, 0, 0, 1152, 648, 0, 0, 0, 0, 0, 648, 0, 0, 0, 0, 0, 0)
 }
 point_count = 5
 
@@ -20,6 +20,7 @@ rock_scene = ExtResource("2_2wlky")
 enemy_scene = ExtResource("3_mb0x5")
 
 [node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-368, -200)
 texture = ExtResource("1_nxvbs")
 centered = false
 
@@ -29,6 +30,7 @@ centered = false
 curve = SubResource("Curve2D_u0kre")
 
 [node name="RockSpawn" type="PathFollow2D" parent="RockPath"]
+rotation = 0.00694433
 
 [node name="HUD" parent="." instance=ExtResource("5_7gejk")]
 

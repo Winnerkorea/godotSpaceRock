@@ -3,7 +3,7 @@ extends CanvasLayer
 signal start_game
 
 @onready var lives_counter = $MarginContainer/HBoxContainer/LivesCounter.get_children()
-@onready var score_level = $MarginContainer/HBoxContainer/ScoreLabel
+@onready var score_label = $MarginContainer/HBoxContainer/ScoreLabel
 @onready var message = $VBoxContainer/Message
 @onready var start_button = $VBoxContainer/StartButton
 
@@ -13,7 +13,7 @@ func show_message(text):
 	$Timer.start()
 
 func update_score(value):
-	score_level.text = str(value)
+	score_label.text = str(value)
 	
 func update_lives(value):
 	for item in 3:
