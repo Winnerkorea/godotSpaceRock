@@ -9,6 +9,7 @@ var score = 0
 var playing = false
 
 func _ready() -> void:
+	$Player.hide()
 	screensize = get_viewport().get_visible_rect().size
 	for i in 3:
 		spawn_rock(3)
@@ -53,6 +54,7 @@ func _on_rock_exploded(size, radius, pos, vel):
 
 func new_game():
 	#이전 게임의 바위가 남아 있으면 제거한다.
+	$Player.show()
 	get_tree().call_group("rocks","queue_free")
 	level = 0
 	score = 0

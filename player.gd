@@ -20,7 +20,7 @@ var reset_pos = false
 var lives= 0: set = set_lives
 
 func _ready() -> void:
-	change_state(ALIVE)
+	change_state(INIT)
 	screensize = get_viewport_rect().size
 	$GunCooldown.wait_time = fire_rate
 
