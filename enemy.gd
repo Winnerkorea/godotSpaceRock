@@ -40,6 +40,8 @@ func shoot():
 	var b = bullet_scene.instantiate()
 	get_tree().root.add_child(b)
 	b.start(global_position, dir)
+	$ShootSound.play()
+	
 
 func take_damage(amount):
 	health -= amount
@@ -49,6 +51,7 @@ func take_damage(amount):
 		
 func explode():
 	speed = 0
+	$ExplosionSound.play()
 	$GunCooldown.stop()
 	$CollisionShape2D.set_deferred("disabled", true)
 	$Sprite2D.hide()

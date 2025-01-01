@@ -51,6 +51,7 @@ func _on_rock_exploded(size, radius, pos, vel):
 		var newpos = pos + dir * radius
 		var newvel = dir * vel.length() * 1.1
 		spawn_rock(size - 1, newpos, newvel)
+	$ExplosionSound.play()
 
 func new_game():
 	#이전 게임의 바위가 남아 있으면 제거한다.
@@ -63,9 +64,11 @@ func new_game():
 	$Player.reset()
 	await $HUD/Timer.timeout
 	playing = true
+	$Music.play()
 
 func new_level():
 	$EnemyTimer.start(randf_range(5, 10))
+	$LevelUpSound.play()
 	level += 1
 	$HUD.show_message("Wave %s" % level)
 	for i in level:
@@ -80,6 +83,7 @@ func _process(delta: float) -> void:
 func game_over():
 	playing = false
 	$HUD.game_over() 
+	$Music.stop()
 
 func _on_enemy_timer_timeout() -> void:
 	var e = enemy_scene.instantiate()
